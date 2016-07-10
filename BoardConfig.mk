@@ -41,5 +41,19 @@ TARGET_OTA_ASSERT_DEVICE := xt1021,xt1022,xt1023,condor_umts,condor_umtsds,condo
 TARGET_INIT_VENDOR_LIB := libinit_condor
 TARGET_RECOVERY_DEVICE_MODULES := libinit_condor
 
+# Kernel Toolchain
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-5.3-linaro/bin
+KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
+
+#flags
+CLANG_O3 := false
+STRICT_ALIASING := false
+KRAIT_TUNINGS := true
+GRAPHITE_OPTS := false
+ENABLE_GCCONLY := false
+
+# Rom Toolchain
+TARGET_GCC_VERSION_EXP := 5.3-linaro
+
 BOARD_SEPOLICY_DIRS += \
     device/motorola/condor/sepolicy
